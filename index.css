@@ -1,0 +1,169 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+    text-decoration: none;
+}
+
+/* header */
+header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    margin-top: .5em;
+    font-family: "Comic Sans MS", sans-serif, Verdana;
+
+    -webkit-user-select: none; /* Safari */
+    user-select: none;
+    text-wrap: nowrap;
+
+    h1{
+    display: flex;
+    align-items: center;
+
+    font-size: clamp(1.4em, 3vw, 3em);
+    }
+    h3{
+        font-size: clamp(1em, 2.6vw, 2em);
+    }
+
+    img{
+    height: 1.2em; 
+    border-radius: 5px;
+    margin: 8px;
+    }
+}
+nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: min(.2em, 1vw);
+
+    #left, #right {
+    display: flex;
+    align-items: center;
+    gap: min(.2em, 1vw);
+    }
+
+    background-image: radial-gradient(circle,  rgb(62, 136, 227), rgb(38,87,145) );
+    color: white;
+    font-size: clamp(0.6em, 2.6vw, 1.5em);
+
+    width: 100%; height: 2.3em;
+    padding: 0 0.5;
+    margin: 0.5em 0;
+
+    a, p{
+        background-color: rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(1px);
+        color: white;
+        padding: .2em;
+        margin: .1em;
+
+        border: 1px solid transparent;
+        border-radius: 6px;
+
+        transition: all .3s ease;
+    }
+    a:hover, p:hover{
+        box-shadow: 0 0 5px rgb(19, 43, 72);
+        background-color: rgba(255, 255, 255, 0.2);
+
+        border: 1px solid white;
+        border-radius: 6px;
+
+        cursor: pointer;
+    }
+    #user, #services{
+        position: relative;
+    }
+}
+
+nav .dd{
+    .check{
+        display: none;
+    }
+
+    display: flex;
+    flex-direction: column;
+    visibility: hidden;
+
+    position: absolute;
+    right: 0;
+
+    background-color: rgba(62, 136, 227, 0.9);
+    border: 1px solid white;
+    border-radius: 8px;
+
+    opacity: 0;
+    transition: opacity .4s ease;
+
+    .label{
+        padding: .2em .5em;
+    }
+    .label:hover{
+        backdrop-filter: brightness(0.9);
+        cursor: pointer;
+    }
+    .label:active{
+        backdrop-filter: brightness(0.8);
+    }
+}
+
+nav #user:hover .dd{
+    visibility: visible;
+    opacity: 1;
+}
+
+/* footer */
+footer{
+    display: flex;
+    align-items: center;
+
+    background-color: rgb(38,87,145);
+    color: white;
+    font-family: Verdana;
+    height: 50vh;
+
+    gap: 1em;
+
+    #address, #contacts, #logo{
+        display: flex;
+        flex-direction: column;
+
+        flex-grow: 1;
+        padding: 2em;
+    }
+
+    #contacts p{
+        text-wrap: nowrap;
+    }
+
+    hr{
+        height: 90%;
+
+        margin: 0;
+    }
+}
+
+/* main content */
+#sliding-images{
+    height: clamp(20rem,  50vh, 30rem); width: 100%;
+    background-color: rgb(5, 112, 243);
+}
+.adv{
+    height: 30vh;
+
+    display: grid;
+    justify-content: space-evenly;
+
+}
+
+#copyright{
+    text-align: center;
+    font-family: sans-serif;
+    padding: 4px;
+}
