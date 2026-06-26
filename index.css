@@ -11,6 +11,7 @@ html{
 body{
     display: grid;
     grid-template-rows: auto 1fr auto auto;
+    grid-template-columns: 100%;
     height: 100%;
 }
 
@@ -61,7 +62,7 @@ nav{
     font-size: clamp(0.6em, 2.6vw, 1.5em);
 
     width: 100%; height: 2.3em;
-    padding: 0 0.5;
+    padding: 0 0.5em;
     margin: 0.5em 0;
 
     a, p{
@@ -102,12 +103,14 @@ nav .dd{
     position: absolute;
     right: 0;
 
-    background-color: rgba(62, 136, 227, 0.9);
+    background-color: rgba(62, 136, 227, 0.6);
+    backdrop-filter: blur(6px);
     border: 1px solid white;
     border-radius: 8px;
 
     opacity: 0;
     transition: opacity .4s ease;
+    z-index: 10;
 
     .label{
         padding: .2em .5em;
@@ -166,20 +169,63 @@ footer{
 /* main content */
 main{
     font-family: Verdana, Geneva, Tahoma, sans-serif;
+    width: 100%;
 }
 #sliding-images{
     display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-    height: clamp(20rem,  50vh, 30rem); width: 100%;
-    background-color: rgb(19, 100, 198);
+    width: 100%;
+    background-color: rgb(16, 81, 161);
+    padding: 1em 0;
+
+    overflow-x: hidden;
+
+    .group{        
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        padding-left: 1.5em;
+        gap: 1.5em;
+
+        animation: spin 15s infinite linear;
+        flex-shrink: 0;
+    }
+    .image{
+        background-color: black;
+        color: white;
+        border-radius: 6px;
+        height: 30vh;
+        min-width: 40vw;
+
+        text-align: center;
+        align-content: center;
+
+        flex: 1 0 20vw;
+    }
 }
-.adv{
+
+@keyframes spin{
+    from{ translate: 0;}
+    to{ translate: -100%;}
+}
+
+.adv-container{
     height: 30vh;
 
     display: grid;
-    justify-content: space-evenly;
+    align-items: center;
+    grid-template-columns: 1fr 1fr 1fr;
+    margin: 1em;
+    
+    background-color: rgba(48, 147, 209, 0.397);
 
+    .adv{
+    background-color: rgb(48, 147, 209);
+    border-radius: 5px;
+
+    height: 26vh;
+    margin: 1em;
+}
 }
 
 @media(max-width: 680px){
