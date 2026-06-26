@@ -5,6 +5,14 @@
 
     text-decoration: none;
 }
+html{
+    height: 100%;
+}
+body{
+    display: grid;
+    grid-template-rows: auto 1fr auto auto;
+    height: 100%;
+}
 
 /* header */
 header {
@@ -24,10 +32,10 @@ header {
     display: flex;
     align-items: center;
 
-    font-size: clamp(1.4em, 3vw, 3em);
+    font-size: clamp(1.4rem, 3vw, 3rem);
     }
     h3{
-        font-size: clamp(1em, 2.6vw, 2em);
+        font-size: clamp(1rem, 2.6vw, 2rem);
     }
 
     img{
@@ -40,12 +48,12 @@ nav{
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: min(.2em, 1vw);
+    gap: min(.2rem, 1vw);
 
     #left, #right {
     display: flex;
     align-items: center;
-    gap: min(.2em, 1vw);
+    gap: min(.2rem, 1vw);
     }
 
     background-image: radial-gradient(circle,  rgb(62, 136, 227), rgb(38,87,145) );
@@ -125,14 +133,15 @@ footer{
 
     background-color: rgb(38,87,145);
     color: white;
-    font-family: Verdana;
-    height: 50vh;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    height: 40vh;
 
     gap: 1em;
 
     #address, #contacts, #logo{
         display: flex;
         flex-direction: column;
+        justify-content: center;
 
         flex-grow: 1;
         padding: 2em;
@@ -144,15 +153,26 @@ footer{
 
     hr{
         height: 90%;
-
         margin: 0;
     }
 }
+#copyright{
+        text-align: center;
+        font-family: sans-serif;
+        padding: 4px;
+        color: rgb(38,87,145);
+    }
 
 /* main content */
+main{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
 #sliding-images{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
     height: clamp(20rem,  50vh, 30rem); width: 100%;
-    background-color: rgb(5, 112, 243);
+    background-color: rgb(19, 100, 198);
 }
 .adv{
     height: 30vh;
@@ -162,8 +182,14 @@ footer{
 
 }
 
-#copyright{
-    text-align: center;
-    font-family: sans-serif;
-    padding: 4px;
+@media(max-width: 680px){
+    footer{
+        flex-direction: column;
+        height: auto;
+        hr{
+        height: 0;
+        width: 90%;
+        margin: 0;
+    }
+    }
 }
